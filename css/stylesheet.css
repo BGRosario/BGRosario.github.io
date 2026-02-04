@@ -4,12 +4,19 @@
     text-align: center;
 }
 
+/* Header Tittle */
+
+.header-home {
+
+  text-align: center;
+}
+
 /* Gallery section */ 
 
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* adjusted */
-    gap: 6px; /* adjusted */
+    gap: 0px; /* adjusted */
     max-width: 1200px; /* adjusted */
     margin: auto;
     padding: 20px; /* adjusted */
