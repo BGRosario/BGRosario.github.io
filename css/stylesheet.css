@@ -18,7 +18,9 @@
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* adjusted */
-    gap: 0px; /* adjusted */
+    gap: 1px; /* adjusted */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     max-width: 1200px; /* adjusted */
     margin: auto;
     padding: 20px; /* adjusted */
