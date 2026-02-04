@@ -9,7 +9,7 @@
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* adjusted */
-    gap: 0px; /* adjusted */
+    gap: 6px; /* adjusted */
     max-width: 1200px; /* adjusted */
     margin: auto;
     padding: 20px; /* adjusted */
