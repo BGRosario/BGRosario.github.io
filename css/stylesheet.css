@@ -5,9 +5,9 @@
     
 }
 
-/* Car sections */ 
+/* Gallery section */ 
 
-.gallery-cars {
+.gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0px; /* small space between images */
@@ -16,16 +16,16 @@
     padding: 10px;
   }
   
-  .gallery-cars img {
+  .gallery img {
     width: 100%;
     height: 150px;
-    object-fit: cover; /* crops nicely to fit each block */
+    object-fit: cover; /* crops to fit each block */
     border-radius: 4px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   }
   
-  /* About me image */
+  /* ABOUT ME image */
   
   .about-me img {
     display: block;
@@ -41,7 +41,7 @@
     box-shadow:  0 10px 30px rgba(0, 0, 0, 0.4);
     
   }
-  .gallery-cars img:hover{
+  .gallery img:hover{
     transform: translateY(-4px);
     box-shadow:  0 10px 30px rgba(0, 0, 0, 0.4);
     
