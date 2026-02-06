@@ -26,7 +26,7 @@
   
 .gallery img {
   width: 100%;
-  aspect-ratio: 4 / 3;     /* forces square */
+  aspect-ratio: 3 / 2;     /* forces square */
   object-fit: cover;     /* SHOW ENTIRE IMAGE */
   background-color: #111;  /* letterbox color */
   border-radius: 4px;
