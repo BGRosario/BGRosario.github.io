@@ -16,26 +16,23 @@
 /* Gallery section */ 
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* adjusted */
-    gap: 1px; /* adjusted */
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    max-width: 1200px; /* adjusted */
-    margin: auto;
-    padding: 20px; /* adjusted */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  gap: 8px;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }
   
 .gallery img {
-    width: 100%;
-    height: 260px; /* adjusted */
-    object-fit: cover; /* crops to fit each block */
-    border-radius: 4px;
-    transition: 
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        filter 0.35s ease;
-    will-change: transform;
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* forces square */
+  object-fit: contain;     /* SHOW ENTIRE IMAGE */
+  background-color: #111;  /* letterbox color */
+  border-radius: 4px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
   
 /* ABOUT ME image */
@@ -116,4 +113,24 @@
 /* Show dropdown on hover */
 .has-dropdown:hover .sub-places {
     display: block;
+}
+
+
+/* PHONES, TABLETS, AND DIFFERENT SCREENS */
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
