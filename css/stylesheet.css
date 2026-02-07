@@ -15,18 +15,18 @@
 
 /* Gallery section */ 
 
-.gallery {
+.gallery-landscape {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 per row */
-  gap: 8px;
+  gap: 1px;
   width: 100vw;
   margin: 0;
   padding: 0;
 }
   
-.gallery img {
+.gallery-landscape img {
   width: 100%;
-  aspect-ratio: 3 / 2;     /* forces square */
+  aspect-ratio: 4 / 3;     
   object-fit: cover;     /* SHOW ENTIRE IMAGE */
   background-color: #111;  /* letterbox color */
   border-radius: 4px;
@@ -34,6 +34,16 @@
     transform 0.35s ease,
     box-shadow 0.35s ease;
 }
+
+/*.gallery-portrait img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    object-position: center top;
+    margin: 10px;
+}*/
   
 /* ABOUT ME image */
   
@@ -53,7 +63,7 @@
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
 }
 
-.gallery img:hover {
+.gallery-landscape img:hover {
     transform: translateY(-3px) scale(1.015); /* refined */
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
     filter: brightness(1.04) contrast(1.03);
@@ -118,19 +128,19 @@
 
 /* PHONES, TABLETS, AND DIFFERENT SCREENS */
 @media (max-width: 1024px) {
-  .gallery {
+  .gallery-landscape {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .gallery {
+  .gallery-landscape {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .gallery {
+  .gallery-landscape {
     grid-template-columns: 1fr;
   }
 }
