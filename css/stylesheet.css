@@ -18,7 +18,7 @@
 .gallery-landscape {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 per row */
-  gap: 1px;
+  gap: 0px;
   width: 100vw;
   margin: 0;
   padding: 0;
