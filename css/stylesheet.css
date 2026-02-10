@@ -22,18 +22,15 @@ body {
 
 .gallery-landscape {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 4 per row */
   gap: 0px;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-
+  margin: 0;
+  padding: 0;
 }
   
 .gallery-landscape img {
   width: 100%;
-  height: auto;
-  display: block;
   aspect-ratio: 4 / 3;     
   object-fit: cover;     /* SHOW ENTIRE IMAGE */
   background-color: #111;  /* letterbox color */
