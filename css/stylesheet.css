@@ -3,6 +3,11 @@
 .nav {
     text-align: center;
 }
+body {
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
 
 /* Header Tittle */
 
@@ -17,15 +22,18 @@
 
 .gallery-landscape {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 0px;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
 }
   
 .gallery-landscape img {
   width: 100%;
+  height: auto;
+  display: block;
   aspect-ratio: 4 / 3;     
   object-fit: cover;     /* SHOW ENTIRE IMAGE */
   background-color: #111;  /* letterbox color */
@@ -103,16 +111,32 @@
 /* DROPDOWN */
 
 .sub-places {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
+
     background: #111;
     list-style: none;
-    padding: 0;
+    padding: 8px 0;
     margin: 0;
     min-width: 180px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+
+    /* Hidden state (animatable) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.has-dropdown:hover .sub-places {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .sub-places li a {
