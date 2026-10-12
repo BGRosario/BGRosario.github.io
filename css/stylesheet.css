@@ -109,6 +109,16 @@ body {
     z-index: 2;
 }
 
+/* Hover over effect for Potraits */
+
+.portraits-orientation img:hover {
+  transform: translateY(-3px) scale(1.015); /* refined */
+
+  filter: brightness(1.04) contrast(1.03);
+  z-index: 2;
+}
+
+
 /* NAVIGATION BAR AND HOVER */ 
 
 /* Base nav */
@@ -180,7 +190,85 @@ body {
     display: block;
 }
 
+/* THIS MANAGES POTRAITS FOLDER (Buckets adjustment) */
+/* Creates a responsive grid track on the left side of your page */
+.portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 5px;
+  width: 100%;
+  padding: 20px 0;
+}
 
+/* Styles each clickable card into a standard portrait aspect ratio box */
+.portrait-bucket {
+  display: flex;
+  justify-content: center;  /* Centers text horizontally */
+  align-items: center;      /* Centers text vertically */
+  text-decoration: none;    /* Removes underline from link text */
+  
+  /* Forces a classic 2:3 vertical portrait aspect ratio box */
+  aspect-ratio: 2 / 3; 
+  
+  /* Fits the background cover image nicely without distorting dimensions */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  
+  /* Creates a built-in dark overlay tint so white text is readable over photos */
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Text styling inside the bucket card */
+.bucket-name {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(109, 50, 50, 0.8); /* Ensures clean contrast */
+  padding: 10px;
+}
+
+/* Elegant visual pop hover effect */
+.portrait-bucket:hover {
+  transform: translateY(-5px);
+  /* Darkens the background slightly more on hover to emphasize interactiveness */
+  box-shadow: inset 0 0 0 2000px rgba(80, 79, 79, 0.55); 
+}
+
+/* Inside of the potraits buckets, this adjust orientation */
+
+/* 1. The horizontal scroll track container */
+.portraits-orientation {
+  display: flex;
+  flex-direction: row;      /* Forces images into a horizontal line */
+  flex-wrap: nowrap;        /* Prevents images from wrapping down to a new row */
+  gap: 1px;                /* Keeps your layout spacing gaps perfectly locked in place */
+  width: 100%;
+  overflow-x: auto;         /* Optional: Allows horizontal scrolling if photos exceed screen space */
+  padding: 10px 0;
+}
+
+/* 2. Strict image orientation properties */
+.portraits-orientation img {
+  /* FORCES VERTICAL PORTRAIT CONSTRAINTS */
+  aspect-ratio: 2 / 3;      
+  height: 550px;            /* Set your desired height; photos scale proportionally */
+  width: auto;              /* Allows the width to calculate based on the aspect-ratio */
+  
+  /* CROPPING PROTECTION */
+  object-fit: cover;        /* Fills the 2:3 container cleanly without compressing or squishing your shot */
+  object-position: center;  /* Centers the crop anchor on your focal point */
+  
+  border-radius: 6px;       /* Optional: Gives your photos clean rounded corners */
+  transition: transform 0.3s ease;
+}
+
+
+/* ------------------------------------- */
 /* PHONES, TABLETS, AND DIFFERENT SCREENS */
 @media (max-width: 1024px) {
   .gallery-landscape {
