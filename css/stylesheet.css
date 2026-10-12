@@ -52,13 +52,47 @@ body {
   
 /* ABOUT ME image */
   
+/* 1. Aligns the bio box and image gallery side-by-side */
+.page-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Aligns items to the top */
+  gap: 40px;               /* Space between the bio box and the images */
+  max-width: 1300px;       /* Keeps the layout from stretching too wide on large screens */
+  margin: 20px auto;       /* Centers the layout container on the page */
+  padding: 0 20px;
+}
+
+/* 2. Styles the bio into a small, bounded box on the left */
+.bio {
+  flex: 0 0 300px;         /* Forces the box to stay exactly 300px wide */
+  background-color: #f9f9f9; /* Optional: adds a light background card color */
+  padding: 20px;           /* Adds clean spacing inside the box around the text */
+  border-radius: 10px;      /* Slightly rounds the box corners */
+  border: 1px solid #000000;  /* Optional: adds a subtle border line */
+}
+
+/* 3. Ensures the paragraph text inside fits perfectly */
+.bio p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;     /* Forces horizontal line placement */
+  justify-content: center; /* Centers the whole row of photos */
+  gap: 0px;               /* Puts clean spacing between the images */
+  width: 45%;
+}
+
 .about-me img {
-    display: block;
-    margin: auto;
-    width: 500px;
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;                 /* Allows the images to share the row space equally */
+  min-width: 0;            /* Keeps the browser from overriding the size shrink */
+  max-width: 3000px;        /* Limits the maximum size on desktop */
+  height: auto;            /* Keeps your aspect ratio from distorting */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover over effect for images */
