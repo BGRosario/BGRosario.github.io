@@ -1,78 +1,85 @@
-/* Background color */
 
-.nav {
-    text-align: center;
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+* {
+  box-sizing: border-box;
 }
+
 body {
-    background-color: #fafafa;
-    margin: 0;
-    padding: 0;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
 }
 
-/* Header Tittle */
+/* =========================================
+   HEADER
+========================================= */
 
 .header-home {
-
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif ;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
 }
 
-/* Gallery section */ 
+/* =========================================
+   LANDSCAPE GALLERY
+========================================= */
 
 .gallery-landscape {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 per row */
-  gap: 0px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
   width: 100%;
   margin: 0;
   padding: 0;
 }
-  
+
 .gallery-landscape img {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;     
-  object-fit: cover;     /* SHOW ENTIRE IMAGE */
-  background-color: #111;  /* letterbox color */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: #111;
   border-radius: 4px;
+
   transition:
     transform 0.35s ease,
-    box-shadow 0.35s ease;
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
 }
 
-/*.gallery-portrait img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 3 / 4;
-    object-position: center top;
-    margin: 10px;
-}*/
-  
-/* ABOUT ME image */
-  
-/* 1. Aligns the bio box and image gallery side-by-side */
+.gallery-landscape img:hover {
+  position: relative;
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  filter: brightness(1.04) contrast(1.03);
+  z-index: 2;
+}
+
+/* =========================================
+   ABOUT ME SECTION
+========================================= */
+
 .page-layout {
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /* Aligns items to the top */
-  gap: 40px;               /* Space between the bio box and the images */
-  max-width: 1300px;       /* Keeps the layout from stretching too wide on large screens */
-  margin: 20px auto;       /* Centers the layout container on the page */
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 20px auto;
   padding: 0 20px;
 }
 
-/* 2. Styles the bio into a small, bounded box on the left */
 .bio {
-  flex: 0 0 300px;         /* Forces the box to stay exactly 300px wide */
-  background-color: #f9f9f9; /* Optional: adds a light background card color */
-  padding: 20px;           /* Adds clean spacing inside the box around the text */
-  border-radius: 10px;      /* Slightly rounds the box corners */
-  border: 1px solid #000000;  /* Optional: adds a subtle border line */
+  flex: 0 0 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #000;
 }
 
-/* 3. Ensures the paragraph text inside fits perfectly */
 .bio p {
   margin: 0;
   line-height: 1.6;
@@ -81,209 +88,310 @@ body {
 
 .about-me {
   display: flex;
-  flex-direction: column;     /* Forces horizontal line placement */
-  justify-content: center; /* Centers the whole row of photos */
-  gap: 0px;               /* Puts clean spacing between the images */
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
   width: 45%;
 }
 
 .about-me img {
-  flex: 1;                 /* Allows the images to share the row space equally */
-  min-width: 0;            /* Keeps the browser from overriding the size shrink */
-  max-width: 3000px;        /* Limits the maximum size on desktop */
-  height: auto;            /* Keeps your aspect ratio from distorting */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 3000px;
+  height: auto;
 
-/* Hover over effect for images */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
 
 .about-me img:hover {
-    transform: translateY(-2px); /* softened */
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
 }
 
-.gallery-landscape img:hover {
-    transform: translateY(-3px) scale(1.015); /* refined */
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-    filter: brightness(1.04) contrast(1.03);
-    z-index: 2;
-}
+/* =========================================
+   NAVIGATION BAR
+========================================= */
 
-/* Hover over effect for Potraits */
-
-.portraits-orientation img:hover {
-  transform: translateY(-3px) scale(1.015); /* refined */
-
-  filter: brightness(1.04) contrast(1.03);
-  z-index: 2;
-}
-
-
-/* NAVIGATION BAR AND HOVER */ 
-
-/* Base nav */
 .nav {
-    background: #000;
-    text-align: center;
+  background-color: #000;
+  text-align: center;
 }
 
 .nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-list > li {
-    display: inline-block;
-    position: relative;
+  display: inline-block;
+  position: relative;
 }
 
 .nav a {
-    display: block;
-    padding: 15px 20px;
-    color: #eee;
-    text-decoration: none;
+  display: block;
+  padding: 15px 20px;
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
 
 .nav a:hover {
-    color: #cfae70;
+  color: #cfae70;
 }
 
-/* DROPDOWN */
+/* =========================================
+   NAVIGATION DROPDOWN
+========================================= */
 
 .sub-places {
-    position: absolute;
-    top: 100%;
-    left: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
 
-    background: #111;
-    list-style: none;
-    padding: 8px 0;
-    margin: 0;
-    min-width: 180px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  background-color: #111;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  min-width: 180px;
 
-    /* Hidden state (animatable) */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 
-    transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
 }
 
-.has-dropdown:hover .sub-places {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+.has-dropdown:hover .sub-places,
+.has-dropdown:focus-within .sub-places {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .sub-places li a {
-    padding: 12px 16px;
-    text-align: left;
+  padding: 12px 16px;
+  text-align: left;
 }
 
-/* Show dropdown on hover */
-.has-dropdown:hover .sub-places {
-    display: block;
-}
+/* =========================================
+   PORTRAIT CATEGORY BUCKETS
+========================================= */
 
-/* THIS MANAGES POTRAITS FOLDER (Buckets adjustment) */
-/* Creates a responsive grid track on the left side of your page */
+/*
+   Automatically creates new rows as
+   additional portrait buckets are added.
+*/
+
 .portrait-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 5px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
   width: 100%;
   padding: 20px 0;
 }
 
-/* Styles each clickable card into a standard portrait aspect ratio box */
+/* Individual clickable portrait bucket */
+
 .portrait-bucket {
   display: flex;
-  justify-content: center;  /* Centers text horizontally */
-  align-items: center;      /* Centers text vertically */
-  text-decoration: none;    /* Removes underline from link text */
-  
-  /* Forces a classic 2:3 vertical portrait aspect ratio box */
-  aspect-ratio: 2 / 3; 
-  
-  /* Fits the background cover image nicely without distorting dimensions */
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  aspect-ratio: 2 / 3;
+
   background-size: cover;
   background-position: center;
+
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  
-  /* Creates a built-in dark overlay tint so white text is readable over photos */
+
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Text styling inside the bucket card */
+/* Portrait bucket text */
+
 .bucket-name {
-  color: #ffffff;
+  color: #fff;
   font-size: 1.25rem;
   font-weight: 600;
   text-align: center;
-  text-shadow: 1px 1px 4px rgba(109, 50, 50, 0.8); /* Ensures clean contrast */
+  text-shadow: 1px 1px 4px rgba(109, 50, 50, 0.8);
   padding: 10px;
 }
 
-/* Elegant visual pop hover effect */
+/* Portrait bucket hover */
+
 .portrait-bucket:hover {
   transform: translateY(-5px);
-  /* Darkens the background slightly more on hover to emphasize interactiveness */
-  box-shadow: inset 0 0 0 2000px rgba(80, 79, 79, 0.55); 
+
+  box-shadow:
+    inset 0 0 0 2000px rgba(80, 79, 79, 0.55);
 }
 
-/* Inside of the potraits buckets, this adjust orientation */
+/* =========================================
+   PHOTOS INSIDE PORTRAIT BUCKETS
+========================================= */
 
-/* 1. The horizontal scroll track container */
+/*
+   Portrait photos automatically wrap
+   into additional rows.
+*/
+
 .portraits-orientation {
-  display: flex;
-  flex-direction: row;      /* Forces images into a horizontal line */
-  flex-wrap: nowrap;        /* Prevents images from wrapping down to a new row */
-  gap: 1px;                /* Keeps your layout spacing gaps perfectly locked in place */
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
   width: 100%;
-  overflow-x: auto;         /* Optional: Allows horizontal scrolling if photos exceed screen space */
   padding: 10px 0;
 }
 
-/* 2. Strict image orientation properties */
+/* Individual portrait photos */
+
 .portraits-orientation img {
-  /* FORCES VERTICAL PORTRAIT CONSTRAINTS */
-  aspect-ratio: 2 / 3;      
-  height: 550px;            /* Set your desired height; photos scale proportionally */
-  width: auto;              /* Allows the width to calculate based on the aspect-ratio */
-  
-  /* CROPPING PROTECTION */
-  object-fit: cover;        /* Fills the 2:3 container cleanly without compressing or squishing your shot */
-  object-position: center;  /* Centers the crop anchor on your focal point */
-  
-  border-radius: 6px;       /* Optional: Gives your photos clean rounded corners */
-  transition: transform 0.3s ease;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 6px;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
+/* Portrait photo hover */
 
-/* ------------------------------------- */
-/* PHONES, TABLETS, AND DIFFERENT SCREENS */
+.portraits-orientation img:hover {
+  position: relative;
+  transform: translateY(-3px) scale(1.015);
+  filter: brightness(1.04) contrast(1.03);
+  z-index: 2;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* SMALL DESKTOP / TABLET LANDSCAPE */
+
 @media (max-width: 1024px) {
-  .gallery-landscape {
-    grid-template-columns: repeat(3, 1fr);
+
+  .gallery-landscape,
+  .portraits-orientation,
+  .portrait-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .page-layout {
+    gap: 25px;
+  }
+
 }
+
+/* TABLETS */
 
 @media (max-width: 768px) {
-  .gallery-landscape {
-    grid-template-columns: repeat(2, 1fr);
+
+  .gallery-landscape,
+  .portraits-orientation,
+  .portrait-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .page-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .bio {
+    flex: 0 1 auto;
+    width: 100%;
+  }
+
+  .about-me {
+    width: 100%;
+  }
+
+  .nav a {
+    padding: 12px 15px;
+  }
+
 }
 
+/* MOBILE PHONES */
+
 @media (max-width: 480px) {
-  .gallery-landscape {
+
+  .gallery-landscape,
+  .portraits-orientation,
+  .portrait-grid {
     grid-template-columns: 1fr;
   }
+
+  .page-layout {
+    padding: 0 12px;
+    margin: 15px auto;
+  }
+
+  .bio {
+    padding: 15px;
+  }
+
+  .bio p {
+    font-size: 17px;
+  }
+
+  .portrait-grid {
+    padding: 10px 0;
+  }
+
+  .portraits-orientation {
+    padding: 5px 0;
+  }
+
+  .nav a {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .bucket-name {
+    font-size: 1.15rem;
+  }
+
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gallery-landscape img,
+  .portraits-orientation img,
+  .portrait-bucket,
+  .about-me img {
+    transition: none;
+  }
+
 }
