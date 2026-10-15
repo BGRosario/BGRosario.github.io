@@ -73,11 +73,14 @@ body {
 }
 
 .bio {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
   flex: 0 0 300px;
-  background-color: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #000;
+  color: #555;
+
 }
 
 .bio {
@@ -88,13 +91,14 @@ body {
 
 .bio-right {
 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
   flex: 0 0 300px;
-  font-size: 20px;
-  background-color: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #000;
-
+  color: #555;
+  
 }
 
 .about-me {
