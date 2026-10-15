@@ -19,7 +19,7 @@ body {
 
 .header-home {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
 }
 
@@ -405,4 +405,183 @@ body {
     transition: none;
   }
 
+}
+
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+/* Main layout */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  max-width: 1400px;
+  min-height: 70vh;
+
+  margin: 40px auto;
+  padding: 0 40px;
+  gap: 6px;
+}
+
+/* LEFT: Contact information */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contact-info h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 200;
+  margin: 0 0 25px;
+  color: #111;
+}
+
+/* Intro paragraph */
+
+.contact-intro {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 450px;
+  margin: 0 0 35px;
+}
+
+/* Contact details */
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-details h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  margin: 25px 0 10px;
+  color: #111;
+}
+
+.contact-details p,
+.contact-details a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.contact-details p {
+  margin: 0;
+}
+
+.contact-details a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: #cfae70;
+}
+
+/* RIGHT: Photograph */
+
+.contact-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.contact-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 20 / 20;
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.contact-image img:hover {
+  transform: scale(1.015);
+}
+
+/* Footer */
+
+.contact-footer {
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.contact-footer p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #777;
+}
+
+/* =========================================
+   RESPONSIVE CONTACT PAGE
+========================================= */
+
+/* Tablets */
+
+@media (max-width: 1024px) {
+  .contact-layout {
+    gap: 35px;
+    padding: 0 25px;
+  }
+}
+
+/* Smaller screens */
+
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    min-height: auto;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  .contact-info h1 {
+    font-size: 3rem;
+  }
+
+  .contact-intro {
+    font-size: 16px;
+  }
+
+  .contact-image {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile phones */
+
+@media (max-width: 480px) {
+  .contact-layout {
+    padding: 0 15px;
+    gap: 25px;
+  }
+
+  .contact-info h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-details a,
+  .contact-details p {
+    font-size: 15px;
+  }
 }
